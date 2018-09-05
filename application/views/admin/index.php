@@ -1,1 +1,0 @@
-jos da se doda
