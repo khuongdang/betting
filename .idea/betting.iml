@@ -1,7 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/vendor/codeigniter/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzle/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ircmaxell/password-compat" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mpdf/mpdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/2checkout" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/authorizenet" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/buckaroo" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/cardsave" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/coinbase" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/common" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/dummy" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/eway" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/firstdata" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/gocardless" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/manual" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/migs" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/mollie" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/multisafepay" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/netaxept" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/netbanx" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/payfast" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/payflow" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/paymentexpress" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/paypal" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/pin" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/sagepay" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/securepay" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/stripe" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/targetpay" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/omnipay/worldpay" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpmailer/phpmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/setasign/fpdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/setasign/fpdi" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/setasign/fpdi-fpdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php54" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php55" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

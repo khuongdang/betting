@@ -295,46 +295,43 @@ if ($this->config->item('disable_read_only') == true) {
 
     <div id="invoice_form">
         <div class="invoice">
-
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-5">
-
-                    <h3>
-                        <a href="<?php echo site_url('clients/view/' . $invoice->client_id); ?>">
-                            <?php _htmlsc(format_client($invoice)) ?>
-                        </a>
-                        <?php if ($invoice->invoice_status_id == 1 && !$invoice->creditinvoice_parent_id) { ?>
-                            <span id="invoice_change_client" class="fa fa-edit cursor-pointer small"
-                                  data-toggle="tooltip" data-placement="bottom"
-                                  title="<?php _trans('change_client'); ?>"></span>
-                        <?php } ?>
-                    </h3>
-                    <br>
-                    <div class="client-address">
-                        <?php $this->layout->load_view('clients/partial_client_address', ['client' => $invoice]); ?>
-                    </div>
-                    <?php if ($invoice->client_phone || $invoice->client_email) : ?>
+                <!--<div class="col-xs-12 col-sm-6 col-md-5">
+                    <?php /*if ($invoice->client_phone || $invoice->client_email) : */?>
                         <hr>
-                    <?php endif; ?>
-                    <?php if ($invoice->client_phone): ?>
+                    <?php /*endif; */?>
+                    <?php /*if ($invoice->client_phone): */?>
                         <div>
-                            <?php _trans('phone'); ?>:&nbsp;
-                            <?php _htmlsc($invoice->client_phone); ?>
+                            <?php /*_trans('phone'); */?>:&nbsp;
+                            <?php /*_htmlsc($invoice->client_phone); */?>
                         </div>
-                    <?php endif; ?>
-                    <?php if ($invoice->client_email): ?>
+                    <?php /*endif; */?>
+                    <?php /*if ($invoice->client_email): */?>
                         <div>
-                            <?php _trans('email'); ?>:&nbsp;
-                            <?php _auto_link($invoice->client_email); ?>
+                            <?php /*_trans('email'); */?>:&nbsp;
+                            <?php /*_auto_link($invoice->client_email); */?>
                         </div>
-                    <?php endif; ?>
-
-                </div>
+                    <?php /*endif; */?>
+                </div>-->
 
                 <div class="col-xs-12 visible-xs"><br></div>
 
-                <div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-6 col-md-offset-1">
+                <div class="col-xs-12 col-sm-5 col-md-12 ">
                     <div class="details-box panel panel-default panel-body">
+                        <h3>
+                            <a href="<?php echo site_url('clients/view/' . $invoice->client_id); ?>">
+                                <?php _htmlsc(format_client($invoice)) ?>
+                            </a>
+                            <?php if ($invoice->invoice_status_id == 1 && !$invoice->creditinvoice_parent_id) { ?>
+                                <span id="invoice_change_client" class="fa fa-edit cursor-pointer small"
+                                      data-toggle="tooltip" data-placement="bottom"
+                                      title="<?php _trans('change_client'); ?>"></span>
+                            <?php } ?>
+                        </h3>
+                        <br>
+                        <div class="client-address">
+                            <?php $this->layout->load_view('clients/partial_client_address', ['client' => $invoice]); ?>
+                        </div>
                         <div class="row">
 
                             <?php if ($invoice->invoice_sign == -1) { ?>

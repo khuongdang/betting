@@ -49,7 +49,7 @@
                     <input type="text" name="item_price" class="input-sm form-control amount" value="">
                 </div>
             </td>
-            <td class="td-amount">
+            <!--<td class="td-amount">
                 <div class="input-group">
                     <span class="input-group-addon"><?php _trans('item_discount'); ?></span>
                     <input type="text" name="item_discount_amount" class="input-sm form-control amount"
@@ -59,18 +59,18 @@
             </td>
             <td>
                 <div class="input-group">
-                    <span class="input-group-addon"><?php _trans('tax_rate'); ?></span>
+                    <span class="input-group-addon"><?php /*_trans('tax_rate'); */?></span>
                     <select name="item_tax_rate_id" class="form-control input-sm">
-                        <option value="0"><?php _trans('none'); ?></option>
-                        <?php foreach ($tax_rates as $tax_rate) { ?>
-                            <option value="<?php echo $tax_rate->tax_rate_id; ?>"
-                                <?php check_select(get_setting('default_item_tax_rate'), $tax_rate->tax_rate_id); ?>>
-                                <?php echo format_amount($tax_rate->tax_rate_percent) . '% - ' . $tax_rate->tax_rate_name; ?>
+                        <option value="0"><?php /*_trans('none'); */?></option>
+                        <?php /*foreach ($tax_rates as $tax_rate) { */?>
+                            <option value="<?php /*echo $tax_rate->tax_rate_id; */?>"
+                                <?php /*check_select(get_setting('default_item_tax_rate'), $tax_rate->tax_rate_id); */?>>
+                                <?php /*echo format_amount($tax_rate->tax_rate_percent) . '% - ' . $tax_rate->tax_rate_name; */?>
                             </option>
-                        <?php } ?>
+                        <?php /*} */?>
                     </select>
                 </div>
-            </td>
+            </td>-->
             <td class="td-icon text-right td-vert-middle">
                 <button type="button" class="btn_delete_item btn btn-link btn-sm" title="<?php _trans('delete'); ?>">
                     <i class="fa fa-trash-o text-danger"></i>
@@ -97,6 +97,7 @@
                     </div>
                 </td>
             <?php endif; ?>
+            <!--
             <td class="td-amount">
                 <div class="input-group">
                     <span class="input-group-addon"><?php _trans('product_unit'); ?></span>
@@ -111,21 +112,21 @@
                 </div>
             </td>
             <td class="td-amount td-vert-middle">
-                <span><?php _trans('subtotal'); ?></span><br/>
+                <span><?php /*_trans('subtotal'); */?></span><br/>
                 <span name="subtotal" class="amount"></span>
             </td>
             <td class="td-amount td-vert-middle">
-                <span><?php _trans('discount'); ?></span><br/>
+                <span><?php /*_trans('discount'); */?></span><br/>
                 <span name="item_discount_total" class="amount"></span>
             </td>
             <td class="td-amount td-vert-middle">
-                <span><?php _trans('tax'); ?></span><br/>
+                <span><?php /*_trans('tax'); */?></span><br/>
                 <span name="item_tax_total" class="amount"></span>
             </td>
             <td class="td-amount td-vert-middle">
-                <span><?php _trans('total'); ?></span><br/>
+                <span><?php /*_trans('total'); */?></span><br/>
                 <span name="item_total" class="amount"></span>
-            </td>
+            </td>-->
         </tr>
         </tbody>
 
@@ -172,16 +173,6 @@
                             } ?>>
                     </div>
                 </td>
-                <td class="td-amount td-quantity">
-                    <div class="input-group">
-                        <span class="input-group-addon"><?php _trans('quantity'); ?></span>
-                        <input type="text" name="item_quantity" class="input-sm form-control amount"
-                               value="<?php echo format_amount($item->item_quantity); ?>"
-                            <?php if ($invoice->is_read_only == 1) {
-                                echo 'disabled="disabled"';
-                            } ?>>
-                    </div>
-                </td>
                 <td class="td-amount">
                     <div class="input-group">
                         <span class="input-group-addon"><?php _trans('price'); ?></span>
@@ -192,35 +183,34 @@
                             } ?>>
                     </div>
                 </td>
-                <td class="td-amount">
+                <td class="td-amount td-quantity">
                     <div class="input-group">
-                        <span class="input-group-addon"><?php _trans('item_discount'); ?></span>
-                        <input type="text" name="item_discount_amount" class="input-sm form-control amount"
-                               value="<?php echo format_amount($item->item_discount_amount); ?>"
-                               data-toggle="tooltip" data-placement="bottom"
-                               title="<?php echo get_setting('currency_symbol') . ' ' . trans('per_item'); ?>"
+                        <span class="input-group-addon"><?php _trans('quantity'); ?></span>
+                        <input type="text" name="item_quantity" class="input-sm form-control amount"
+                               value="<?php echo format_amount($item->item_quantity); ?>"
                             <?php if ($invoice->is_read_only == 1) {
                                 echo 'disabled="disabled"';
                             } ?>>
                     </div>
                 </td>
-                <td class="td-amount">
+
+                <!--<td class="td-amount">
                     <div class="input-group">
-                        <span class="input-group-addon"><?php _trans('tax_rate'); ?></span>
+                        <span class="input-group-addon"><?php /*_trans('tax_rate'); */?></span>
                         <select name="item_tax_rate_id" class="form-control input-sm"
-                            <?php if ($invoice->is_read_only == 1) {
+                            <?php /*if ($invoice->is_read_only == 1) {
                                 echo 'disabled="disabled"';
-                            } ?>>
-                            <option value="0"><?php _trans('none'); ?></option>
-                            <?php foreach ($tax_rates as $tax_rate) { ?>
-                                <option value="<?php echo $tax_rate->tax_rate_id; ?>"
-                                    <?php check_select($item->item_tax_rate_id, $tax_rate->tax_rate_id); ?>>
-                                    <?php echo format_amount($tax_rate->tax_rate_percent) . '% - ' . $tax_rate->tax_rate_name; ?>
+                            } */?>>
+                            <option value="0"><?php /*_trans('none'); */?></option>
+                            <?php /*foreach ($tax_rates as $tax_rate) { */?>
+                                <option value="<?php /*echo $tax_rate->tax_rate_id; */?>"
+                                    <?php /*check_select($item->item_tax_rate_id, $tax_rate->tax_rate_id); */?>>
+                                    <?php /*echo format_amount($tax_rate->tax_rate_percent) . '% - ' . $tax_rate->tax_rate_name; */?>
                                 </option>
-                            <?php } ?>
+                            <?php /*} */?>
                         </select>
                     </div>
-                </td>
+                </td>-->
                 <td class="td-icon text-right td-vert-middle">
                     <?php if ($invoice->is_read_only != 1): ?>
                         <button type="button" class="btn_delete_item btn btn-link btn-sm" title="<?php _trans('delete'); ?>"
@@ -256,17 +246,17 @@
                     </td>
                 <?php endif; ?>
 
-                <td class="td-amount">
+                <!--<td class="td-amount">
                     <div class="input-group">
-                        <span class="input-group-addon"><?php _trans('product_unit'); ?></span>
+                        <span class="input-group-addon"><?php /*_trans('product_unit'); */?></span>
                         <select name="item_product_unit_id" class="form-control input-sm">
-                            <option value="0"><?php _trans('none'); ?></option>
-                            <?php foreach ($units as $unit) { ?>
-                                <option value="<?php echo $unit->unit_id; ?>"
-                                    <?php check_select($item->item_product_unit_id, $unit->unit_id); ?>>
-                                    <?php echo htmlsc($unit->unit_name) . "/" . htmlsc($unit->unit_name_plrl); ?>
+                            <option value="0"><?php /*_trans('none'); */?></option>
+                            <?php /*foreach ($units as $unit) { */?>
+                                <option value="<?php /*echo $unit->unit_id; */?>"
+                                    <?php /*check_select($item->item_product_unit_id, $unit->unit_id); */?>>
+                                    <?php /*echo htmlsc($unit->unit_name) . "/" . htmlsc($unit->unit_name_plrl); */?>
                                 </option>
-                            <?php } ?>
+                            <?php /*} */?>
                         </select>
                     </div>
                 </td>
@@ -293,7 +283,7 @@
                     <span name="item_total" class="amount">
                         <?php echo format_currency($item->item_total); ?>
                     </span>
-                </td>
+                </td>-->
             </tr>
             </tbody>
         <?php } ?>
@@ -325,67 +315,67 @@
 
     <div class="col-xs-12 col-md-6 col-md-offset-2 col-lg-4 col-lg-offset-4">
         <table class="table table-bordered text-right">
-            <tr>
-                <td style="width: 40%;"><?php _trans('subtotal'); ?></td>
+            <!--<tr>
+                <td style="width: 40%;"><?php /*_trans('subtotal'); */?></td>
                 <td style="width: 60%;"
-                    class="amount"><?php echo format_currency($invoice->invoice_item_subtotal); ?></td>
+                    class="amount"><?php /*echo format_currency($invoice->invoice_item_subtotal); */?></td>
+            </tr>-->
+            <!--<tr>
+                <td><?php /*_trans('item_tax'); */?></td>
+                <td class="amount"><?php /*echo format_currency($invoice->invoice_item_tax_total); */?></td>
             </tr>
             <tr>
-                <td><?php _trans('item_tax'); ?></td>
-                <td class="amount"><?php echo format_currency($invoice->invoice_item_tax_total); ?></td>
-            </tr>
-            <tr>
-                <td><?php _trans('invoice_tax'); ?></td>
+                <td><?php /*_trans('invoice_tax'); */?></td>
                 <td>
-                    <?php if ($invoice_tax_rates) {
-                        foreach ($invoice_tax_rates as $invoice_tax_rate) { ?>
+                    <?php /*if ($invoice_tax_rates) {
+                        foreach ($invoice_tax_rates as $invoice_tax_rate) { */?>
                             <form method="post"
-                                action="<?php echo site_url('invoices/delete_invoice_tax/' . $invoice->invoice_id . '/' . $invoice_tax_rate->invoice_tax_rate_id) ?>">
-                                <?php _csrf_field(); ?>
+                                action="<?php /*echo site_url('invoices/delete_invoice_tax/' . $invoice->invoice_id . '/' . $invoice_tax_rate->invoice_tax_rate_id) */?>">
+                                <?php /*_csrf_field(); */?>
                                 <span class="amount">
-                                    <?php echo format_currency($invoice_tax_rate->invoice_tax_rate_amount); ?>
+                                    <?php /*echo format_currency($invoice_tax_rate->invoice_tax_rate_amount); */?>
                                 </span>
                                 <span class="text-muted">
-                                    <?php echo htmlsc($invoice_tax_rate->invoice_tax_rate_name) . ' ' . format_amount($invoice_tax_rate->invoice_tax_rate_percent) ?>
+                                    <?php /*echo htmlsc($invoice_tax_rate->invoice_tax_rate_name) . ' ' . format_amount($invoice_tax_rate->invoice_tax_rate_percent) */?>
                                 </span>
                                 <button type="submit" class="btn btn-xs btn-link"
-                                        onclick="return confirm('<?php _trans('delete_tax_warning'); ?>');">
+                                        onclick="return confirm('<?php /*_trans('delete_tax_warning'); */?>');">
                                     <i class="fa fa-trash-o"></i>
                                 </button>
                             </form>
-                        <?php }
+                        <?php /*}
                     } else {
                         echo format_currency('0');
-                    } ?>
+                    } */?>
                 </td>
             </tr>
             <tr>
-                <td class="td-vert-middle"><?php _trans('discount'); ?></td>
+                <td class="td-vert-middle"><?php /*_trans('discount'); */?></td>
                 <td class="clearfix">
                     <div class="discount-field">
                         <div class="input-group input-group-sm">
                             <input id="invoice_discount_amount" name="invoice_discount_amount"
                                    class="discount-option form-control input-sm amount"
-                                   value="<?php echo format_amount($invoice->invoice_discount_amount != 0 ? $invoice->invoice_discount_amount : ''); ?>"
-                                <?php if ($invoice->is_read_only == 1) {
+                                   value="<?php /*echo format_amount($invoice->invoice_discount_amount != 0 ? $invoice->invoice_discount_amount : ''); */?>"
+                                <?php /*if ($invoice->is_read_only == 1) {
                                     echo 'disabled="disabled"';
-                                } ?>>
-                            <div class="input-group-addon"><?php echo get_setting('currency_symbol'); ?></div>
+                                } */?>>
+                            <div class="input-group-addon"><?php /*echo get_setting('currency_symbol'); */?></div>
                         </div>
                     </div>
                     <div class="discount-field">
                         <div class="input-group input-group-sm">
                             <input id="invoice_discount_percent" name="invoice_discount_percent"
-                                   value="<?php echo format_amount($invoice->invoice_discount_percent != 0 ? $invoice->invoice_discount_percent : ''); ?>"
+                                   value="<?php /*echo format_amount($invoice->invoice_discount_percent != 0 ? $invoice->invoice_discount_percent : ''); */?>"
                                    class="discount-option form-control input-sm amount"
-                                <?php if ($invoice->is_read_only == 1) {
+                                <?php /*if ($invoice->is_read_only == 1) {
                                     echo 'disabled="disabled"';
-                                } ?>>
+                                } */?>>
                             <div class="input-group-addon">&percnt;</div>
                         </div>
                     </div>
                 </td>
-            </tr>
+            </tr>-->
             <tr>
                 <td><?php _trans('total'); ?></td>
                 <td class="amount"><b><?php echo format_currency($invoice->invoice_total); ?></b></td>
